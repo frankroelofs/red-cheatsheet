@@ -1,8 +1,8 @@
 #Linux PrivEsc
 ## Find interesting files
-find / -writable -type f 2>/dev/null  #Writable files\
-find / -writable -type d 2>/dev/null #Writable directories\
-find / -perm -u=s -type f 2>/dev/null #Setuid executables
+`find / -writable -type f 2>/dev/null`  #Writable files\
+`find / -writable -type d 2>/dev/null` #Writable directories\
+`find / -perm -u=s -type f 2>/dev/null` #Setuid executables
 
 ## Passwd file writable?
 s -al /var/etc/passwd \
