@@ -1,4 +1,4 @@
-#Linux PrivEsc
+# Linux PrivEsc
 ## Find interesting files
 `find / -writable -type f 2>/dev/null`  #Writable files\
 `find / -writable -type d 2>/dev/null` #Writable directories\
