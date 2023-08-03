@@ -13,3 +13,10 @@
 Swiss Army Knife for SMTP\
 - `--to mail@mail.com` Send to address
 - `--server` Server to use
+
+## Chisel
+`chisel`
+- `client` for client mode
+- `server` for server mode
+Note: issues with starting chisel client when using the pre-compiled version from Kali. Dowloaded release from github does work.\
+
