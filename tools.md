@@ -20,3 +20,5 @@ Swiss Army Knife for SMTP\
 - `server` for server mode
 Note: issues with starting chisel client when using the pre-compiled version from Kali. Dowloaded release from github does work.\
 
+##
+`searchsploit -m XXXXX ` to "mirror" a vulnerability from ExploitDB
