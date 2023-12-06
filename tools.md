@@ -3,6 +3,10 @@ ___!!MAKE SURE TO HAVE ENOUGH RESOURCES..!!___
 ## nmap
 `sudo nmap -sC -sV -T4 -v -p- -oA 192.168.233.227 192.168.233.227` Full TCP scan with logging \
 `sudo nmap -sU -T4 -v -p- 192.168.233.153 -oA nmap/192.168.233.153-UDP` Full UDP SCAN with logging
+
+## gobuster
+`gobuster dir -u http://192.168.233.153 -w /usr/share/wordlists/dirb/big.txt -t 5 --output gobuster/192.168.233.153` Gobuster dir scan
+
 ## curl
 `curl`
 - `-H "host: test.com"` add header, for testing vhosts\
