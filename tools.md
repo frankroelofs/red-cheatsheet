@@ -49,10 +49,13 @@ __Start ligolo agent:__\
 __Setup tunnel over proxy:__\
 `session` Select session\
 `ifconfig` -- Show ip info\
-`sudo ip route add 192.168.0.0/24 dev ligolo` Create route\
+`sudo ip route add 192.168.0.0/24 dev ligolo` Create route ( *In Linux itself* )  
 `start` Start tunnel\
 
 --Network is now reachable through proxy--
+
+`listener_add --addr 0.0.0.0:1234 --to 127.0.0.1:4321 --tcp` Create a listener on the agent, listening on 0.0.0.0 port 1234 and forwarding to proxy host on port 4321
+`listener_list` to show all listeners
 
 ## Other usefull resources:
 https://crackstation.net/
