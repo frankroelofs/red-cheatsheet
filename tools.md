@@ -82,3 +82,19 @@ https://crackstation.net/
 ## Cracking SSH keyphrase
 `ssh2john sample.key > sample.hash`
 `john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt`
+
+## Cracking ZIP
+`zip2john file.zip > zip.hash` Create hash file for zip archive  
+`| cut -d ':' -f 2` To make a zip2john file suitable for Hashcat  
+
+
+## Loop lookup users based on sid  
+(Windows edit seq, start from 500, for linux from 1000)
+```
+for i in $(seq 1 100); do
+    rpcclient -N -U "" 192.168.136.11 -c "lookupsids S-1-22-1-$i";
+done
+```
+
+## Get user and domain sid 
+`rpcclient lookupnames root/admin`
