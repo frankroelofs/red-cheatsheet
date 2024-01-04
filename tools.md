@@ -85,3 +85,6 @@ https://crackstation.net/
 ## Cracking SSH keyphrase
 `ssh2john sample.key > sample.hash`
 `john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt`
+
+## Alternative to BURP
+Zed Attack Proxy

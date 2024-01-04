@@ -1,5 +1,5 @@
 # clean kali install:
-- `sudo apt install wireguard gobuster peass python3-wsgidav bloodhound chisel`
+- `sudo apt install wireguard gobuster peass python3-wsgidav bloodhound chisel zaproxy`
 - `gunzip /usr/share/wordlists/rockyou.txt.gz`
 
 ## Bloodhound setup
