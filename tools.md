@@ -101,3 +101,8 @@ done
 
 ## Get user and domain sid 
 `rpcclient lookupnames root/admin`
+
+## Get scheduled taks info
+`schtasks /query /TN taskname /XML`
+`(get-scheduledtask taskname).actions`
+`(get-scheduledtask taskname).triggers`
